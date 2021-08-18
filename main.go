@@ -3,9 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(hello())
+	fmt.Println(hello("world"))
 }
 
-func hello() string {
-	return "hello world"
+const englishHelloPrefix = "hello, "
+
+func hello(name string) string {
+	if name == "" {
+		name = "world"
+	}
+	return englishHelloPrefix + name
 }
